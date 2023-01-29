@@ -1,9 +1,9 @@
 This is forked from github.com/shellinabox/shellinabox
 
-## cross-compiling (for example - mipsel)
-ssl.c has a problem (see https://github.com/shellinabox/shellinabox/issues/385)
+## cross-compiling (for example - mipsel) libssl-dev is required
+it could be a problem in libhttp/ssl.c (see https://github.com/shellinabox/shellinabox/issues/385)
 ```
-./configure --enable-static --disable-ssl LDFLAGS="-static" --host=mipsel-unknown-linux-gnu && make
+./configure --enable-static LDFLAGS="-static" --host=mipsel-unknown-linux-gnu && make
 ```
 
 shellinabox
