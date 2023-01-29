@@ -1,9 +1,9 @@
 This is forked from github.com/shellinabox/shellinabox
 
-## Customized compilation (http only)
-SSL has a problem (see https://github.com/shellinabox/shellinabox/issues/385)
+## Customized compilation 
+ssl.c has a problem (see https://github.com/shellinabox/shellinabox/issues/385)
 ```
-./configure --enable-static --disable-ssl --host=mipsel-unknown-linux-gnu && make
+./configure --enable-static LDFLAGS="-static" --host=mipsel-unknown-linux-gnu && make
 ```
 
 shellinabox
