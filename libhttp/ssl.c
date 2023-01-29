@@ -1016,10 +1016,14 @@ int sslPromoteToSSL(struct SSLSupport *ssl, SSL **sslHndl, int fd,
 }
 
 BIO *sslGetNextBIO(BIO *b) {
+#if defined(HAVE_OPENSSL)
 #if OPENSSL_VERSION_NUMBER <= 0x10100000L
   return b->next_bio;
 #else
   return BIO_next(b);
+#endif
+#else
+  return NULL;
 #endif
 }
 
