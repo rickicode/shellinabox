@@ -19,9 +19,9 @@ cd ./openssl && ./Configure $platform && make
 ls -lt *.a
 
 echo "\n================ shellinabox COMPILING =============\n"
-cp $QEMU_LD_PREFIX/user/lib/libutil.a .
-cp $QEMU_LD_PREFIX/user/lib/libc.a .
-cp $QEMU_LD_PREFIX/user/lib/libdl.a .
+cp $QEMU_LD_PREFIX/usr/lib/libutil.a .
+cp $QEMU_LD_PREFIX/usr/lib/libc.a .
+cp $QEMU_LD_PREFIX/usr/lib/libdl.a .
 ./configure --enable-static=yes --enable-shared=no CFLAGS="-Wall -W -O2" LDFLAGS="-static -static-libgcc -L. -L./openssl -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=$ENV_HOST && make
 
 echo "\n================ shellinabox BINARY STRIPPED =============\n"
