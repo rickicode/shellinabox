@@ -3,7 +3,7 @@ This is forked from github.com/shellinabox/shellinabox
 ## cross-compiling (for example - mipsel) libssl-dev is required
 it could be a problem in libhttp/ssl.c (see https://github.com/shellinabox/shellinabox/issues/385)
 ```
-./configure --enable-static LDFLAGS="-static --static-libgcc -L. -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=mipsel-unknown-linux-gnu && make
+./configure --enable-static CFLAGS="-Wall -W -O2" LDFLAGS="-static --static-libgcc -L. -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=mipsel-unknown-linux-gnu && make
 ```
 
 shellinabox
