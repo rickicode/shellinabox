@@ -1,3 +1,9 @@
+This is forked from github.com/shellinabox/shellinabox
+
+## Customized compilation (http only)
+```
+./configure --enable-static --disable-ssl --host=mipsel-unknown-linux-gnu && make
+```
 
 shellinabox
 ===========
