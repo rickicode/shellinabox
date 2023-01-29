@@ -23,7 +23,7 @@ echo "\n================ shellinabox COMPILING =============\n"
 cp $QEMU_LD_PREFIX/usr/lib/libutil.a .
 cp $QEMU_LD_PREFIX/usr/lib/libc.a .
 cp $QEMU_LD_PREFIX/usr/lib/libdl.a .
-chmod +x configure && ./configure --enable-static=yes --enable-shared=no CFLAGS="-Wall -W -O2" LDFLAGS="-static -static-libgcc -L. -L./openssl -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=$ENV_HOST && make
+autoconf -i && ./configure --enable-static=yes --enable-shared=no CFLAGS="-Wall -W -O2" LDFLAGS="-static -static-libgcc -L. -L./openssl -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=$ENV_HOST && make
 
 echo "\n================ shellinabox BINARY STRIPPED =============\n"
 /usr/xcc/$ENV_HOST/bin/$ENV_HOST-strip ./shellinaboxd
