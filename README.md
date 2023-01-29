@@ -1,6 +1,6 @@
 This is forked from github.com/shellinabox/shellinabox
 
-## Customized compilation 
+## cross-compiling (for example - mipsel)
 ssl.c has a problem (see https://github.com/shellinabox/shellinabox/issues/385)
 ```
 ./configure --enable-static LDFLAGS="-static" --host=mipsel-unknown-linux-gnu && make
