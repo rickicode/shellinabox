@@ -5,7 +5,17 @@ env
 echo "\n================ openssl COMPILING =============\n"
 mkdir ./openssl
 tar -xzvf ./openssl-1.0.2q.tar.gz -C ./openssl
-cd ./openssl && ./Configure linux-mips32 && make
+platform=
+if [ ! -z $(echo "$ENV_HOST" | grep "mips") ]; then
+  platform="linux-mips32"
+fi
+if [ ! -z $(echo "$ENV_HOST" | grep "arm") ]; then
+  platform="linux-armv4"
+fi
+if [ ! -z $(echo "$ENV_HOST" | grep "x86_64") ]; then
+  platform="linux-x86_64"
+fi
+cd ./openssl && ./Configure $platform && make
 ls -lt *.a
 
 echo "\n================ shellinabox COMPILING =============\n"
