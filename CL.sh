@@ -17,6 +17,7 @@ if [ ! -z $(echo "$ENV_HOST" | grep "x86_64") ]; then
 fi
 cd ./openssl && ./Configure $platform && make
 ls -lt *.a
+cd ..
 
 echo "\n================ shellinabox COMPILING =============\n"
 cp $QEMU_LD_PREFIX/usr/lib/libutil.a .
