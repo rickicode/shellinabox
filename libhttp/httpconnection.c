@@ -104,7 +104,7 @@ static int httpPromoteToSSL(struct HttpConnection *http, const char *buf,
       check(!rc);
       // Reset renegotiations count for connections promoted to SSL.
       http->ssl->renegotiationCount = 0;
-      SSL_set_app_data(http->sslHndl, http);
+      SSL_set_ex_data(http->sslHndl, 0, http); // Patched by simonchen
     }
     free(http->partial);
     http->partialLength    = 0;
