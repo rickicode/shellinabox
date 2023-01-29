@@ -17,13 +17,15 @@ if [ ! -z $(echo "$ENV_HOST" | grep "x86_64") ]; then
 fi
 cd ./openssl && ./Configure $platform && make
 ls -lt *.a
+cp libssl.a ../
+cp libcrypto.a ../
 cd ..
 
 echo "\n================ shellinabox COMPILING =============\n"
 cp $QEMU_LD_PREFIX/usr/lib/libutil.a .
 cp $QEMU_LD_PREFIX/usr/lib/libc.a .
 cp $QEMU_LD_PREFIX/usr/lib/libdl.a .
-autoreconf -i && ./configure --enable-static=yes --enable-shared=no CFLAGS="-Wall -W -O2" LDFLAGS="-static -static-libgcc -L. -L./openssl -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=$ENV_HOST && make
+autoreconf -i && ./configure --enable-static=yes --enable-shared=no CFLAGS="-Wall -W -O2" LDFLAGS="-static -static-libgcc -L. -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=$ENV_HOST && make
 
 echo "\n================ shellinabox BINARY STRIPPED =============\n"
 /usr/xcc/$ENV_HOST/bin/$ENV_HOST-strip ./shellinaboxd
