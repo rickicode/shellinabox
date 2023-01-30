@@ -1,9 +1,9 @@
 This is forked from github.com/shellinabox/shellinabox
 
-## cross-compiling (for example - mipsel) 
+## Patches & Cross-compiling
 - Patched: libhttp/ssl.c (see https://github.com/shellinabox/shellinabox/issues/385)
 - Patched: libhttp/httpconnection.c (Replace `SSL_set_app_data` with `SSL_set_ex_data`)
-- Configure:
+- cross-compiling configure (for example - mipsel) 
 ```
 ./configure --enable-static CFLAGS="-Wall -W -O2" CPPFLAGS="-I./openssl/include" LDFLAGS="-static -static-libgcc -L." LIBS="-lssl -lcrypto -lpthread -ldl -lutil -lc" --with-gnu-ld --host=mipsel-unknown-linux-gnu && make
 ```
