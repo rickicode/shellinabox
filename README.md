@@ -4,7 +4,7 @@ This is forked from github.com/shellinabox/shellinabox
 - Patched: libhttp/ssl.c (see https://github.com/shellinabox/shellinabox/issues/385)
 - Patched: libhttp/httpconnection.c (Replace `SSL_set_app_data` with `SSL_set_ex_data`)
 ```
-./configure --enable-static CFLAGS="-Wall -W -O2" CPPFLAGS="-I./openssl/include" LDFLAGS="-static -static-libgcc -L. -lutil -lssl -lcrypto -ldl -lc" --with-gnu-ld --host=mipsel-unknown-linux-gnu && make
+./configure --enable-static CFLAGS="-Wall -W -O2" CPPFLAGS="-I./openssl/include" LDFLAGS="-static -static-libgcc -L. -lssl -lcrypto -lpthread -ldl -lutil -lc" --with-gnu-ld --host=mipsel-unknown-linux-gnu && make
 ```
 
 shellinabox
