@@ -1,6 +1,6 @@
 This is forked from github.com/shellinabox/shellinabox
 
-## Patches & Cross-compiling
+## Patches & Cross-compiling (OpenSSL supported)
 - Patched: libhttp/ssl.c (see https://github.com/shellinabox/shellinabox/issues/385)
 - Patched: libhttp/httpconnection.c (Replace `SSL_set_app_data` with `SSL_set_ex_data`)
 - cross-compiling configure (for example - mipsel) 
