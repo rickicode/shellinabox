@@ -7,7 +7,7 @@ This is forked from [shellinabox/shellinabox](https://github.com/shellinabox/she
 ```
 ./configure --enable-static CFLAGS="-Wall -W -O2" CPPFLAGS="-I./openssl/include" LDFLAGS="-static -static-libgcc -L." LIBS="-lssl -lcrypto -lpthread -ldl -lutil -lc" --with-gnu-ld --host=mipsel-unknown-linux-gnu && make
 ```
-- The functions to check Linux user / group is statically sourced from [Musl](https://musl.libc.org/) (but except to `getbyhostname` & `dlopen` functions)
+- The functions to check Linux user / group is copied from [Musl](https://musl.libc.org/) (but except to `getbyhostname` & `dlopen` functions)
 
 shellinabox
 ===========
