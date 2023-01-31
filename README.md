@@ -1,4 +1,4 @@
-This is forked from github.com/shellinabox/shellinabox
+This is forked from [shellinabox/shellinabox](https://github.com/shellinabox/shellinabox)
 
 ## Patches & Cross-compiling (OpenSSL supported)
 - Patched: libhttp/ssl.c (see https://github.com/shellinabox/shellinabox/issues/385)
