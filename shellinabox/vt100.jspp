@@ -917,8 +917,8 @@ VT100.prototype.initializeElements = function(container) {
                        '<div class="hidden">' +
                          '<div id="usercss"></div>' +
                          '<pre><div><span id="space"></span></div></pre>' +
-                         '<input type="text" id="input" autocorrect="off" autocapitalize="off" />' +
-                         '<input type="text" id="cliphelper" />' +
+                         '<input type="text" id="input" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" />' +
+                         '<input type="text" id="cliphelper" tabindex="-1" />' +
                          (typeof suppressAllAudio != 'undefined' &&
                           suppressAllAudio ? "" :
                          embed + '<bgsound id="beep_bgsound" loop=1 />') +
